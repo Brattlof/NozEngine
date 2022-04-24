@@ -9,10 +9,11 @@
 
 namespace Noz
 {
-	static std::time_t s_Time;
-
 	class Log
 	{
+	private:
+		static std::time_t s_Time;
+
 	public:
 		static inline void Allocate()
 		{
@@ -48,6 +49,8 @@ namespace Noz
 				args...);
 		}
 	};
+
+	std::time_t Log::s_Time;
 }
 
 // Macros for logger class
