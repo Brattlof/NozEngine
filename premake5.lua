@@ -10,7 +10,8 @@ workspace "Noz"
 	
 	includedirs
 	{
-		"%{wks.location}/Noz/src"
+		"%{wks.location}/Noz/src",
+		"%{wks.location}/Noz/vendor/glfw/include"
 	}
 	
 include "Noz"
