@@ -1,17 +1,27 @@
 #pragma once
 
-#include <stdio.h>
-#include <string>
 #include <consoleapi.h>
+#include <ctime>
+
+#define FMT_HEADER_ONLY
+#include <fmt/format.h>
+#include <fmt/chrono.h>
 
 namespace Noz
 {
-	class Log
+	class LogTime
+	{
+	protected:
+		static std::time_t s_Time;
+	};
+
+	std::time_t LogTime::s_Time;
+
+	class Log : public LogTime
 	{
 	public:
 		static inline void Allocate()
 		{
-			FILE* f;
 			AllocConsole();
 			freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
 			freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
@@ -25,25 +35,23 @@ namespace Noz
 		template <class ...T>
 		static inline void Error(const char* format, T... args)
 		{
-			// Concanate format with prefix and newline;
-			std::string ret("[- NOZ -] ");
-			ret += format;
-			ret += "\n";
+			time(&s_Time);
 
-			// Print to console
-			printf(ret.c_str(), args...);
+			printf(fmt::format("{:%H:%M:%S} [NOZ_ERROR] {}\n",
+				fmt::localtime(s_Time),
+				format).c_str(),
+				args...);
 		}
 
 		template <class ...T>
 		static inline void Info(const char* format, T... args)
 		{
-			// Concanate format with prefix and newline;
-			std::string ret("[/ NOZ /] ");
-			ret += format;
-			ret += "\n";
+			time(&s_Time);
 
-			// Print to console
-			printf(ret.c_str(), args...);
+			printf(fmt::format("{:%H:%M:%S} [NOZ_INFO] {}\n",
+				fmt::localtime(s_Time),
+				format).c_str(),
+				args...);
 		}
 	};
 }

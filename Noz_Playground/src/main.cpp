@@ -20,7 +20,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	Noz::Entity& entity = admin.CreateEntity<Noz::Entity>();
 	entity.Add<HealthComponent>(100.f);
 
-	NOZ_LOG_INFO(NOZ_OBFUSCATE("Entity->Health: %f"), entity.Get<HealthComponent>()->GetHealth());
+	NOZ_LOG_ERROR(NOZ_OBFUSCATE("Entity->Health: %f"), entity.Get<HealthComponent>()->GetHealth());
 
 	while (true)
 	{
