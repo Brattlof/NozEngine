@@ -22,8 +22,9 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 
 	NOZ_LOG_INFO(NOZ_OBFUSCATE("Entity->Health: %f"), entity.Get<HealthComponent>()->GetHealth());
 
-	while (!GetAsyncKeyState(VK_END))
+	while (true)
 	{
+		if (GetAsyncKeyState(VK_END) & 0x1) break;
 	}
 
 #ifdef NOZ_DEBUG

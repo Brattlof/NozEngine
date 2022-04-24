@@ -212,4 +212,6 @@ namespace Noz
     };
 }
 
+// Macros for the cryptor class
+
 #define NOZ_OBFUSCATE(text) ::Noz::Cryptor::Decrypt(::Noz::Cryptor::Encrypt(text)).c_str()
