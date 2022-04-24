@@ -13,7 +13,8 @@ namespace Noz
 		{
 			FILE* f;
 			AllocConsole();
-			freopen_s(&f, "CONOUT$", "w", stdout);
+			freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
+			freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
 		}
 
 		static inline void Free()
