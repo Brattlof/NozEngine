@@ -1,32 +1,17 @@
 workspace "Noz"
 	architecture "x86_64"
+	startproject "Noz_Playground"
 	
 	configurations
 	{
 		"Debug",
 		"Release"
 	}
-
-project "Noz"
-	location "./Noz/src"
-	kind "WindowedApp"
-	language "C++"
 	
-	targetdir ("Binaries/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
-	objdir ("Binaries/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
-	
-	files
+	includedirs
 	{
-		"%{prj.name}/src/**.hpp",
-		"%{prj.name}/src/**.cpp"
+		"%{wks.location}/Noz/src"
 	}
 	
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS"
-	}
-	
-	filter "system:windows"
-		cppdialect "C++20"
-		staticruntime "On"
-		systemversion "latest"
+include "Noz"
+include "Noz_Playground"
