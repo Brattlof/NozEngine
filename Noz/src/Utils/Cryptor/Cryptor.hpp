@@ -34,7 +34,7 @@ namespace Noz
         template <typename buffer_type>
         static buffer_type Encrypt(const buffer_type& in, const std::string& key = s_Key)
         {
-            return Base64Encode(do_xor(in, key));
+            return Base64Encode(DoXor(in, key));
         }
 
         static std::string Decrypt(const char* in, const std::string& key = s_Key)
