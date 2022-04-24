@@ -7,10 +7,6 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -30,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+# VS Files
+*.sln
+*.vcxproj*
+.vs/
+
+# Binaries
+/Binaries
