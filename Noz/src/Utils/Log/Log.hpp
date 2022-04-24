@@ -9,15 +9,9 @@
 
 namespace Noz
 {
-	class LogTime
-	{
-	protected:
-		static std::time_t s_Time;
-	};
+	static std::time_t s_Time;
 
-	std::time_t LogTime::s_Time;
-
-	class Log : public LogTime
+	class Log
 	{
 	public:
 		static inline void Allocate()
