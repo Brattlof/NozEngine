@@ -12,7 +12,7 @@ public:
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int cmdShow)
 {
 #ifdef NOZ_DEBUG
-	NOZ_ALLOCATE_CONSOLE;
+	NOZ_ALLOCATE_CONSOLE
 #endif
 
 	Noz::EntityAdmin admin;
@@ -20,7 +20,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	Noz::Entity& entity = admin.CreateEntity<Noz::Entity>();
 	entity.Add<HealthComponent>(100.f);
 
-	NOZ_LOG_INFO("Entity->Health: %f", entity.Get<HealthComponent>()->GetHealth());
+	NOZ_LOG_INFO(NOZ_OBFUSCATE("Entity->Health: %f"), entity.Get<HealthComponent>()->GetHealth());
 
 	while (!GetAsyncKeyState(VK_END))
 	{
