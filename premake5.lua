@@ -12,6 +12,7 @@ workspace "Noz"
 	{
 		"%{wks.location}/Noz/src",
 		"%{wks.location}/Noz/vendor/glfw/include"
+		"%{wks.location}/Noz/vendor/glm"
 	}
 	
 include "Noz"
