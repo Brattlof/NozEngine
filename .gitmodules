@@ -1,3 +1,3 @@
 [submodule "Noz/vendor/glfw"]
-	path = Noz/vendor/glfw
-	url = https://github.com/glfw/glfw.git
+    path = Noz/vendor/glfw
+    url = https://github.com/glfw/glfw.git
