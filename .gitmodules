@@ -7,3 +7,6 @@
 [submodule "Noz/vendor/fmt"]
 	path = Noz/vendor/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "Noz/vendor/imgui"]
+	path = Noz/vendor/imgui
+	url = https://github.com/ocornut/imgui.git

@@ -14,6 +14,11 @@ project "Noz"
 		"./src/**.cpp"
 	}
 	
+	libdirs
+	{
+		"$(VULKAN_SDK)/Lib"
+	}
+	
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"

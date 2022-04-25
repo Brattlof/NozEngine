@@ -9,3 +9,7 @@
 // --Utilities--
 #include "Utils/Utils.hpp"
 // -------------
+
+// --Renderer--
+#include "Renderer/Renderer.hpp"
+// ------------
