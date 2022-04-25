@@ -1,5 +1,7 @@
 #include "Application.hpp"
 
+#include "../VulkanAPI/VulkanAPI.hpp"
+
 using namespace Noz;
 
 Application::Application(const char* title, int width, int height, bool use_imgui) :
@@ -45,6 +47,11 @@ bool Application::Setup(const char* title, int width, int height, bool use_imgui
 	{
 		return false;
 	}
+
+	uint32_t extensions_count = 0;
+	const char** extensions = glfwGetRequiredInstanceExtensions(&extensions_count);
+	VulkanAPI* api = new VulkanAPI(extensions, extensions_count);
+	delete api;
 
 	return true;
 }

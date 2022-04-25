@@ -1,4 +1,3 @@
-
 #include "Entity.hpp"
 #include "../BaseComponent/BaseComponent.hpp"
 
