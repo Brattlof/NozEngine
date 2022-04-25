@@ -28,15 +28,13 @@ void VulkanAPI::SetupVulkan(const char** extensions, uint32_t extensions_count)
     err = vkCreateInstance(&create_info, m_Allocator, &m_Instance);
 
     // Select GPU
+    err = vkEnumeratePhysicalDevices(m_Instance, &m_GpuCount, NULL);
 
-    uint32_t gpu_count;
-    err = vkEnumeratePhysicalDevices(m_Instance, &gpu_count, NULL);
-
-    VkPhysicalDevice* gpus = (VkPhysicalDevice*)malloc(sizeof(VkPhysicalDevice) * gpu_count);
-    err = vkEnumeratePhysicalDevices(m_Instance, &gpu_count, gpus);
+    VkPhysicalDevice* gpus = (VkPhysicalDevice*)malloc(sizeof(VkPhysicalDevice) * m_GpuCount);
+    err = vkEnumeratePhysicalDevices(m_Instance, &m_GpuCount, gpus);
 
     int use_gpu = 0;
-    for (int i = 0; i < (int)gpu_count; i++)
+    for (int i = 0; i < (int)m_GpuCount; i++)
     {
         VkPhysicalDeviceProperties properties;
         vkGetPhysicalDeviceProperties(gpus[i], &properties);

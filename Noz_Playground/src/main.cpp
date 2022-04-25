@@ -4,6 +4,8 @@ int Entry(int argc, char** argv)
 {
 	Noz::Application* app = new Noz::Application(NOZ_OBFUSCATE("NOZ_PLAYGROUND"), 900, 600);
 
+	NOZ_LOG_INFO("Num of GPU's: %d", app->GetVulkanAPI().GetGpuCount());
+
 	while (app->Alive())
 	{
 		app->Update();

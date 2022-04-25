@@ -17,11 +17,15 @@ namespace Noz
 		VkPipelineCache m_PipelineCache = VK_NULL_HANDLE;
 		VkDescriptorPool m_DescriptorPool = VK_NULL_HANDLE;
 
+		uint32_t m_GpuCount;
+
 	public:
 		VulkanAPI(const char** extensions, uint32_t extensions_count);
 		~VulkanAPI();
 
 		void SetupVulkan(const char** extensions, uint32_t extensions_count);
 		void CleanupVulkan();
+		
+		uint32_t GetGpuCount() { return m_GpuCount; }
 	};
 }
