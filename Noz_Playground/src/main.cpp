@@ -1,27 +1,15 @@
 #include <Noz.hpp>
 
-class HealthComponent : public Noz::BaseComponent
-{
-private:
-	float m_Health;
-public:
-	void Reset(float health) { this->m_Health = health; }
-	float GetHealth() { return this->m_Health; }
-};
-
 int Entry(int argc, char** argv)
 {
-	Noz::EntityAdmin admin;
+	Noz::Application* app = new Noz::Application(NOZ_OBFUSCATE("NOZ_PLAYGROUND"), 900, 600);
 
-	Noz::Entity& entity = admin.CreateEntity<Noz::Entity>();
-	entity.Add<HealthComponent>(100.f);
-
-	NOZ_LOG_INFO(NOZ_OBFUSCATE("Entity->Health: %f"), entity.Get<HealthComponent>()->GetHealth());
-
-	while (true)
+	while (app->Alive())
 	{
-		if (GetAsyncKeyState(VK_END) & 0x1) break;
+		app->Update();
 	}
+
+	delete app;
 
 	return 0;
 }

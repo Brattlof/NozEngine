@@ -14,14 +14,22 @@ project "Noz"
 		"./src/**.cpp"
 	}
 	
-	libdirs
-	{
-		"$(VULKAN_SDK)/Lib"
-	}
-	
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"
+	}
+	
+	libdirs
+	{
+		"$(VULKAN_SDK)/Lib",
+		"%{wks.location}/Noz/vendor/libs"
+	}
+	
+	links
+	{
+		"glfw3",
+		"vulkan-1",
+		"VkLayer_utils"
 	}
 	
 	filter "system:windows"

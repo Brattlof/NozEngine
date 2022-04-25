@@ -14,7 +14,8 @@ workspace "Noz"
 		"%{wks.location}/Noz/src",
 		"%{wks.location}/Noz/vendor/glfw/include",
 		"%{wks.location}/Noz/vendor/glm",
-		"%{wks.location}/Noz/vendor/fmt/include"
+		"%{wks.location}/Noz/vendor/fmt/include",
+		"%{wks.location}/Noz/vendor/imgui"
 	}
 	
 include "Noz"

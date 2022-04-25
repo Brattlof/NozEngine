@@ -3,7 +3,6 @@
 #define GLFW_INCLUDE_NONE
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
-#include <vulkan/vulkan.h>
 
 namespace Noz
 {
@@ -15,10 +14,12 @@ namespace Noz
 		GLFWwindow* m_Window;
 
 	public:
-		Application(const char* title, int width, int height, bool use_imgui);
+		Application(const char* title, int width, int height, bool use_imgui = false);
 		~Application();
 
-		bool Setup(bool use_imgui);
+		void Update();
+
+		bool Setup(const char* title, int width, int height, bool use_imgui);
 		bool Alive();
 	};
 }
