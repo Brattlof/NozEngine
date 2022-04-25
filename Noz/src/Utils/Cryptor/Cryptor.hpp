@@ -14,7 +14,7 @@ namespace Noz
     };
 
     template <typename T>
-    const std::string CryptorBase<T>::s_Base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/@~*.";
+    const std::string CryptorBase<T>::s_Base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     template <typename T>
     std::string CryptorBase<T>::s_Key = "\\Driver\\Disk";

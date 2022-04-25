@@ -10,6 +10,7 @@ workspace "Noz"
 	
 	includedirs
 	{
+		"$(VULKAN_SDK)/Include",
 		"%{wks.location}/Noz/src",
 		"%{wks.location}/Noz/vendor/glfw/include",
 		"%{wks.location}/Noz/vendor/glm",
