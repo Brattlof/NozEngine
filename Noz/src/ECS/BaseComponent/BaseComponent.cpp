@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "../Entity/Entity.hpp"
 
 using namespace Noz;

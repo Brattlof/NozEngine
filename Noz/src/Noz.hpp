@@ -1,10 +1,5 @@
 #pragma once
 
-#define NOMINMAX
-
-#include <windows.h>
-#include <memory>
-
 // --Entity Component System--
 #include "ECS/ECS.hpp"
 // ---------------------------

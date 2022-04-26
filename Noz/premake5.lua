@@ -7,6 +7,9 @@ project "Noz"
 	targetdir ("%{wks.location}/Binaries/%{prj.name}/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
 	objdir ("%{wks.location}/Binaries/%{prj.name}/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
 	
+	pchheader "pch.h"
+	pchsource "src/pch.cpp"
+	
 	files
 	{
 		"./src/**.hpp",

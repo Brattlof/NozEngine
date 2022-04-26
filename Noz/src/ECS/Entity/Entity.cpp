@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Entity.hpp"
 #include "../BaseComponent/BaseComponent.hpp"
 

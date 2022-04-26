@@ -1,39 +1,24 @@
 #pragma once
 
-#include <consoleapi.h>
-#include <ctime>
-
 #define FMT_HEADER_ONLY
+#pragma warning(push, 0)
 #include <fmt/format.h>
 #include <fmt/chrono.h>
+#pragma warning(pop)
 
 namespace Noz
 {
 	class Log
 	{
-	private:
-		static std::time_t s_Time;
-
 	public:
-		static inline void Allocate()
-		{
-			AllocConsole();
-			freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
-			freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-		}
-
-		static inline void Free()
-		{
-			FreeConsole();
-		}
-
 		template <class ...T>
 		static inline void Error(const char* format, T... args)
 		{
-			time(&s_Time);
+			std::time_t _time;
+			time(&_time);
 
 			printf(fmt::format("{:%H:%M:%S} [NOZ_ERROR] {}\n",
-				fmt::localtime(s_Time),
+				fmt::localtime(_time),
 				format).c_str(),
 				args...);
 		}
@@ -41,28 +26,23 @@ namespace Noz
 		template <class ...T>
 		static inline void Info(const char* format, T... args)
 		{
-			time(&s_Time);
+			std::time_t _time;
+			time(&_time);
 
 			printf(fmt::format("{:%H:%M:%S} [NOZ_INFO] {}\n",
-				fmt::localtime(s_Time),
+				fmt::localtime(_time),
 				format).c_str(),
 				args...);
 		}
 	};
-
-	std::time_t Log::s_Time;
 }
 
 // Macros for logger class
 
 #ifdef NOZ_DEBUG
-#define NOZ_ALLOCATE_CONSOLE ::Noz::Log::Allocate();
-#define NOZ_FREE_CONSOLE ::Noz::Log::Free();
 #define NOZ_LOG_ERROR(...) ::Noz::Log::Error(__VA_ARGS__)
 #define NOZ_LOG_INFO(...) ::Noz::Log::Info(__VA_ARGS__)
 #else
-#define NOZ_ALLOCATE_CONSOLE
-#define NOZ_FREE_CONSOLE
 #define NOZ_LOG_ERROR
 #define NOZ_LOG_INFO
 #endif

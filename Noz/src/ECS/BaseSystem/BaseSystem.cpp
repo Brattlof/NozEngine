@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "BaseSystem.hpp"
 #include "../EntityAdmin/EntityAdmin.hpp"
 

@@ -1,4 +1,5 @@
 #include <Noz.hpp>
+#include <Windows.h>
 
 int Entry(int argc, char** argv)
 {
