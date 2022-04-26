@@ -13,3 +13,9 @@
 [submodule "Noz/vendor/bgfx"]
 	path = Noz/vendor/bgfx
 	url = https://github.com/bkaradzic/bgfx.git
+[submodule "Noz/vendor/bx"]
+	path = Noz/vendor/bx
+	url = https://github.com/bkaradzic/bx.git
+[submodule "Noz/vendor/bimg"]
+	path = Noz/vendor/bimg
+	url = https://github.com/bkaradzic/bgfx.git

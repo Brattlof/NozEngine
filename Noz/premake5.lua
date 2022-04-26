@@ -17,20 +17,16 @@ project "Noz"
 		"./src/**.cpp"
 	}
 	
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS"
-	}
-	
 	libdirs
 	{
 		"$(VULKAN_SDK)/Lib",
-		"%{wks.location}/Noz/vendor/libs"
+		"%{wks.location}/Noz/precompiled_libs"
 	}
 	
 	links
 	{
-		"glfw3",
+		--"glfw3",
+		"glfw3_mt",
 		"vulkan-1",
 		"VkLayer_utils"
 	}
@@ -42,9 +38,21 @@ project "Noz"
 		defines "NOZ_DEBUG"
 		runtime "Debug"
 		symbols "on"
+		links
+		{
+			"bxDebug",
+			"bimgDebug",
+			"bgfxDebug"
+		}
 		
 	filter "configurations:Release"
 		defines "NOZ_RELEASE"
 		runtime "Release"
 		optimize "on"
+		links
+		{
+			"bxRelease",
+			"bimgRelease",
+			"bgfxRelease"
+		}
 		

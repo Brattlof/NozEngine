@@ -2,7 +2,6 @@ project "Noz_Playground"
 	location "./src"
 	language "C++"
 	cppdialect "C++20"
-	staticruntime "off"
 	
 	targetdir ("%{wks.location}/Binaries/%{prj.name}/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
 	objdir ("%{wks.location}/Binaries/%{prj.name}/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}")
@@ -12,12 +11,7 @@ project "Noz_Playground"
 		"./src/**.hpp",
 		"./src/**.cpp"
 	}
-	
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS"
-	}
-	
+
 	links
 	{
 		"Noz"
