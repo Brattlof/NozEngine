@@ -10,3 +10,6 @@
 [submodule "Noz/vendor/imgui"]
 	path = Noz/vendor/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "Noz/vendor/bgfx"]
+	path = Noz/vendor/bgfx
+	url = https://github.com/bkaradzic/bgfx.git
