@@ -19,16 +19,12 @@ project "Noz"
 	
 	libdirs
 	{
-		"$(VULKAN_SDK)/Lib",
 		"%{wks.location}/Noz/precompiled_libs"
 	}
 	
 	links
 	{
-		--"glfw3",
-		"glfw3_mt",
-		"vulkan-1",
-		"VkLayer_utils"
+		"glfw3_mt"
 	}
 	
 	filter "system:windows"
