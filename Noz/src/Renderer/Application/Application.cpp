@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "pch.hpp"
 #include "Application.hpp"
 
 using namespace Noz;
