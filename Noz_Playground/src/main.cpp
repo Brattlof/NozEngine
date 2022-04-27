@@ -1,4 +1,3 @@
-#define NOZ_PLATFORM_WINDOWS
 #include <Noz.hpp>
 
 int Entry(int argc, char** argv)
