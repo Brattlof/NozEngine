@@ -3,9 +3,20 @@
 #include <bx/bx.h>
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
-
-#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include <imgui.h>
+
+#ifdef NOZ_PLATFORM_WINDOWS
+#define GLFW_EXPOSE_NATIVE_WIN32
+
+#elif NOZ_PLATFORM_LINUX
+#define GLFW_EXPOSE_NATIVE_X11
+
+#elif NOZ_PLATFORM_OSX
+#define GLFW_EXPOSE_NATIVE_COCOA
+#endif
+
+#include <GLFW/glfw3native.h>
 
 namespace Noz
 {

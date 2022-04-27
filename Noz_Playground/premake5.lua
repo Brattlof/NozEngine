@@ -16,9 +16,6 @@ project "Noz_Playground"
 	{
 		"Noz"
 	}
-	
-	filter "system:windows"
-		systemversion "latest"
 		
 	filter "configurations:Debug"
 		kind "ConsoleApp"

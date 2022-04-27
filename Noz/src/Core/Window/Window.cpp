@@ -10,6 +10,7 @@ Window::Window(const char* title, int width, int height, bool use_imgui) :
 {
 	if (!Setup(title, width, height, use_imgui))
 	{
+		NOZ_LOG_ERROR("Failed to setup window");
 		Cleanup();
 	}
 }
@@ -21,6 +22,10 @@ Window::~Window()
 
 void Window::Update()
 {
+	bgfx::reset((uint32_t)m_Width, (uint32_t)m_Height, BGFX_RESET_VSYNC);
+	bgfx::setDebug(BGFX_DEBUG_STATS);
+	bgfx::frame();
+
 	glfwSwapBuffers(m_Window);
 	glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
 	glfwPollEvents();
@@ -41,6 +46,30 @@ bool Window::Setup(const char* title, int width, int height, bool use_imgui)
 	}
 
 	bgfx::renderFrame();
+
+	bgfx::Init init;
+	init.resolution.width = (uint32_t)m_Width;
+	init.resolution.height = (uint32_t)m_Height;
+	init.resolution.reset = BGFX_RESET_VSYNC;
+
+#ifdef NOZ_PLATFORM_WINDOWS
+	NOZ_LOG_INFO("Platform: Windows");
+	init.platformData.nwh = glfwGetWin32Window(m_Window);
+
+#elif NOZ_PLATFORM_LINUX
+	NOZ_LOG_INFO("Platform: Linux");
+	init.platformData.ndt = glfwGetX11Display();
+	init.platformData.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
+
+#elif NOZ_PLATFORM_OSX
+	NOZ_LOG_INFO("Platform: OSX");
+	init.platformData.nwh = glfwGetCocoaWindow(window);
+#endif
+
+	if (!bgfx::init(init))
+	{
+		return false;
+	}
 
 	return true;
 }

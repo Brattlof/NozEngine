@@ -28,5 +28,9 @@ workspace "Noz"
 		"%{wks.location}/Noz/vendor/bgfx/include"
 	}
 	
+	filter "system:windows"
+		systemversion "latest"
+		defines "NOZ_PLATFORM_WINDOWS"
+	
 include "Noz"
 include "Noz_Playground"
