@@ -10,9 +10,11 @@ Window::Window(const char* title, int width, int height, bool use_imgui) :
 {
 	if (!Setup(title, width, height, use_imgui))
 	{
-		NOZ_LOG_ERROR("Failed to setup window");
+		NOZ_LOG_ERROR(NOZ_OBFUSCATE("Failed to setup window"));
 		Cleanup();
 	}
+
+	NOZ_LOG_INFO(NOZ_OBFUSCATE("Window setup successful"));
 }
 
 Window::~Window()
@@ -53,16 +55,16 @@ bool Window::Setup(const char* title, int width, int height, bool use_imgui)
 	init.resolution.reset = BGFX_RESET_VSYNC;
 
 #ifdef NOZ_PLATFORM_WINDOWS
-	NOZ_LOG_INFO("Platform: Windows");
+	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: Windows"));
 	init.platformData.nwh = glfwGetWin32Window(m_Window);
 
 #elif defined NOZ_PLATFORM_LINUX
-	NOZ_LOG_INFO("Platform: Linux");
+	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: Linux"));
 	init.platformData.ndt = glfwGetX11Display();
 	init.platformData.nwh = (void*)(uintptr_t)glfwGetX11Window(m_Window);
 
 #elif defined NOZ_PLATFORM_OSX
-	NOZ_LOG_INFO("Platform: OSX");
+	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: OSX"));
 	init.platformData.nwh = glfwGetCocoaWindow(m_Window);
 #endif
 

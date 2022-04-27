@@ -8,3 +8,4 @@
 #include <memory>
 
 #include "Utils/Log/Log.hpp"
+#include "Utils/Cryptor/Cryptor.hpp"
