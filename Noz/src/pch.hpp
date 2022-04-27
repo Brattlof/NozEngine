@@ -1,10 +1,12 @@
 #pragma once
+#ifdef NOZ_PLATFORM_WINDOWS
+	#ifndef NOMINMAX
+		#define NOMINMAX
+	#endif
 
-#ifndef NOMINMAX
-	#define NOMINMAX
+	#include <Windows.h>
 #endif
 
-#include <Windows.h>
 #include <memory>
 
 #include "Utils/Log/Log.hpp"
