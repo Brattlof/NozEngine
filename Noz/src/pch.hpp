@@ -8,6 +8,8 @@
 #endif
 
 #include <memory>
+#include <vector>
+#include <tuple>
 
 #include "Utils/Log/Log.hpp"
 #include "Utils/Cryptor/Cryptor.hpp"

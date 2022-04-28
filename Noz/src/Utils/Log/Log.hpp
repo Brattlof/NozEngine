@@ -11,7 +11,7 @@ namespace Noz
 	class Log
 	{
 	public:
-		template <class ...T>
+		template <typename ...T>
 		static inline void Error(const char* format, T... args)
 		{
 			std::time_t _time;
@@ -23,7 +23,7 @@ namespace Noz
 				args...);
 		}
 
-		template <class ...T>
+		template <typename ...T>
 		static inline void Info(const char* format, T... args)
 		{
 			std::time_t _time;

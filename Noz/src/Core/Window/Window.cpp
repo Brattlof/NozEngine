@@ -15,6 +15,11 @@ Window::Window(const char* title, int width, int height, bool use_imgui) :
 	}
 
 	NOZ_LOG_INFO(NOZ_OBFUSCATE("Window setup successful"));
+
+	while (Alive())
+	{
+		Update();
+	}
 }
 
 Window::~Window()

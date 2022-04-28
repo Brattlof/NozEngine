@@ -12,6 +12,6 @@
 #include "Utils/Utils.hpp"
 // -------------
 
-// --Renderer--
-#include "Renderer/Renderer.hpp"
+// --Graphics--
+#include "Graphics/Graphics.hpp"
 // ------------

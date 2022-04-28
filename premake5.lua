@@ -23,6 +23,7 @@ workspace "Noz"
 		"%{wks.location}/Noz/vendor/glm",
 		"%{wks.location}/Noz/vendor/fmt/include",
 		"%{wks.location}/Noz/vendor/imgui",
+		"%{wks.location}/Noz/vendor/imgui/backends",
 		"%{wks.location}/Noz/vendor/bx/include",
 		"%{wks.location}/Noz/vendor/bimg/include",
 		"%{wks.location}/Noz/vendor/bgfx/include"

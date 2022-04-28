@@ -4,6 +4,7 @@
 #include "BaseSystem/BaseSystem.hpp"
 
 #include "ComponentPool/ComponentPool.hpp"
+#include "Components/Components.hpp"
 
 #include "Entity/Entity.hpp"
 #include "EntityAdmin/EntityAdmin.hpp"
