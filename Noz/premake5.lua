@@ -12,8 +12,9 @@ project "Noz"
 	
 	files
 	{
-		"./src/**.hpp",
 		"./src/**.h",
+		"./src/**.hpp",
+		"./src/**.c",
 		"./src/**.cpp"
 	}
 	

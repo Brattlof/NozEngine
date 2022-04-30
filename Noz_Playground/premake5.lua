@@ -8,7 +8,9 @@ project "Noz_Playground"
 	
 	files
 	{
+		"./src/**.h",
 		"./src/**.hpp",
+		"./src/**.c",
 		"./src/**.cpp"
 	}
 

@@ -12,7 +12,8 @@ void Renderer::Render(std::vector<Entity*> entity_list)
 		{
 			for (Mesh mesh : x->Get<ModelComponent>()->Meshes)
 			{
-				bgfx::setTransform(&x->Get<TransformComponent>()->GetTransform());
+				glm::mat4 trans = x->Get<TransformComponent>()->GetTransform();
+				bgfx::setTransform(&trans);
 				bgfx::setVertexBuffer(0, mesh.VBH);
 				bgfx::setIndexBuffer(mesh.IBH);
 
