@@ -31,7 +31,6 @@ workspace "Noz"
 	
 	filter "system:windows"
 		systemversion "latest"
-		defines "NOZ_PLATFORM_WINDOWS"
 	
 include "Noz"
 include "Noz_Playground"

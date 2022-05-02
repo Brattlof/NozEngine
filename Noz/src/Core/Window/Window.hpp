@@ -6,13 +6,13 @@
 #include <GLFW/glfw3.h>
 #include <imgui.h>
 
-#ifdef NOZ_PLATFORM_WINDOWS
+#ifdef BX_PLATFORM_WINDOWS
 #define GLFW_EXPOSE_NATIVE_WIN32
 
-#elif defined NOZ_PLATFORM_LINUX
+#elif defined BX_PLATFORM_LINUX || BX_PLATFORM_BSD
 #define GLFW_EXPOSE_NATIVE_X11
 
-#elif defined NOZ_PLATFORM_OSX
+#elif defined BX_PLATFORM_OSX
 #define GLFW_EXPOSE_NATIVE_COCOA
 #endif
 

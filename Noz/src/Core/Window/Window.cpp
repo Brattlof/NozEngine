@@ -59,16 +59,16 @@ bool Window::Setup(const char* title, int width, int height, bool use_imgui)
 	init.resolution.height = (uint32_t)m_Height;
 	init.resolution.reset = BGFX_RESET_VSYNC;
 
-#ifdef NOZ_PLATFORM_WINDOWS
+#ifdef BX_PLATFORM_WINDOWS
 	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: Windows"));
 	init.platformData.nwh = glfwGetWin32Window(m_Window);
 
-#elif defined NOZ_PLATFORM_LINUX
+#elif defined BX_PLATFORM_LINUX || BX_PLATFORM_BSD
 	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: Linux"));
 	init.platformData.ndt = glfwGetX11Display();
 	init.platformData.nwh = (void*)(uintptr_t)glfwGetX11Window(m_Window);
 
-#elif defined NOZ_PLATFORM_OSX
+#elif defined BX_PLATFORM_OSX
 	NOZ_LOG_INFO(NOZ_OBFUSCATE("Platform: OSX"));
 	init.platformData.nwh = glfwGetCocoaWindow(m_Window);
 #endif

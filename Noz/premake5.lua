@@ -27,9 +27,6 @@ project "Noz"
 	{
 		"glfw3_mt"
 	}
-	
-	filter "system:windows"
-		systemversion "latest"
 		
 	filter "configurations:Debug"
 		defines "NOZ_DEBUG"
