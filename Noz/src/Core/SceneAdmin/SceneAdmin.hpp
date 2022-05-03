@@ -7,7 +7,7 @@ namespace Noz
 	class SceneAdmin
 	{
 	private:
-		std::map<std::string, Scene*> m_Scenes;
+		std::unordered_map<std::string, Scene*> m_Scenes;
 
 	public:
 		SceneAdmin();

@@ -3,7 +3,10 @@
 
 using namespace Noz;
 
-SceneAdmin::SceneAdmin() { }
+SceneAdmin::SceneAdmin() 
+{ 
+	m_Scenes;
+}
 
 SceneAdmin::~SceneAdmin()
 {
