@@ -10,6 +10,9 @@
 #include <memory>
 #include <vector>
 #include <tuple>
+#include <map>
+#include <unordered_map>
+#include <string>
 
 #include "Utils/Log/Log.hpp"
 #include "Utils/Cryptor/Cryptor.hpp"

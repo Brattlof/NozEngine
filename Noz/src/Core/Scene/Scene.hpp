@@ -14,10 +14,16 @@ namespace Noz
 		Scene();
 		~Scene();
 
+		//
 		EntityAdmin* GetAdmin() { return m_EntityAdmin; }
 
+		//
 		void AddEntity(Entity* entity) { m_EntityList.push_back(entity); }
+
+		//
 		Entity* GetEntity(uint32_t index) { return m_EntityList.at(index); }
+
+		//
 		std::vector<Entity*> GetEntityList() { return m_EntityList; }
 	};
 }
