@@ -4,7 +4,7 @@
 
 int Entry(int argc, char** argv)
 {
-	std::unique_ptr<Noz::Application> app = std::make_unique<Noz::Application>(NOZ_OBFUSCATE("NOZ_PLAYGROUND"), 900, 600);
+	std::unique_ptr<Noz::Application> app = std::make_unique<Noz::Application>(NOZ_OBFUSCATE("NOZ_EDITOR"), 900, 600);
 
 	while (app->Run())
 	{

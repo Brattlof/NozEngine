@@ -1,7 +1,6 @@
 #include "pch.hpp"
 #include "Application.hpp"
 #include "../FileManager/FileManager.hpp"
-#include <filesystem>
 
 using namespace Noz;
 

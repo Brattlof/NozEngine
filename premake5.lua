@@ -27,7 +27,8 @@ workspace "Noz"
 		"%{wks.location}/Noz/vendor/bx/include",
 		"%{wks.location}/Noz/vendor/bimg/include",
 		"%{wks.location}/Noz/vendor/bgfx/include",
-		"%{wks.location}/Noz/vendor/bgfx/3rdparty"
+		"%{wks.location}/Noz/vendor/bgfx/3rdparty",
+		"%{wks.location}/Noz/vendor/bgfx/examples/common"
 	}
 	
 	filter "system:windows"
