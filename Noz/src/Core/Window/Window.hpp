@@ -4,7 +4,6 @@
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
 #include <GLFW/glfw3.h>
-#include <imgui.h>
 
 #ifdef BX_PLATFORM_WINDOWS
 #define GLFW_EXPOSE_NATIVE_WIN32
