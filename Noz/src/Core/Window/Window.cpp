@@ -24,8 +24,11 @@ Window::~Window()
 
 void Window::Update()
 {
+	bgfx::setViewRect(0, 0, 0, uint16_t(m_Width), uint16_t(m_Height));
+	//bgfx::touch(0);
 	bgfx::reset((uint32_t)m_Width, (uint32_t)m_Height, BGFX_RESET_VSYNC);
 	bgfx::setDebug(BGFX_DEBUG_STATS);
+
 	bgfx::frame();
 
 	glfwSwapBuffers(m_Window);
