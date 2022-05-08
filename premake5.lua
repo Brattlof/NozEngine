@@ -1,6 +1,6 @@
 workspace "Noz"
 	architecture "x86_64"
-	startproject "Noz_Playground"
+	startproject "Noz_Editor"
 	staticruntime "on"
 	warnings "Off" -- Don't have time to fix warnings and can't stand to look at them
 	
@@ -26,11 +26,12 @@ workspace "Noz"
 		"%{wks.location}/Noz/vendor/imgui/backends",
 		"%{wks.location}/Noz/vendor/bx/include",
 		"%{wks.location}/Noz/vendor/bimg/include",
-		"%{wks.location}/Noz/vendor/bgfx/include"
+		"%{wks.location}/Noz/vendor/bgfx/include",
+		"%{wks.location}/Noz/vendor/bgfx/3rdparty"
 	}
 	
 	filter "system:windows"
 		systemversion "latest"
 	
 include "Noz"
-include "Noz_Playground"
+include "Noz_Editor"
