@@ -35,17 +35,20 @@ void Window::Update()
 {
 	const bx::Vec3 at = { 0.0f, 0.0f,  0.0f };
 	const bx::Vec3 eye = { 0.0f, 0.0f, -5.0f };
+
 	float view[16];
 	bx::mtxLookAt(view, eye, at);
+
 	float proj[16];
 	bx::mtxProj(proj, 60.0f, float(m_Width) / float(m_Height), 0.1f, 100.0f, bgfx::getCaps()->homogeneousDepth);
 	bgfx::setViewTransform(0, view, proj);
+
 	float mtx[16];
 	bx::mtxRotateXY(mtx, counter * 0.01f, counter * 0.0081f);
-	bgfx::setTransform(mtx);
 
 	bgfx::touch(0);
 
+	bgfx::setTransform(mtx);
 	bgfx::setVertexBuffer(0, vbh);
 	bgfx::setIndexBuffer(ibh);
 	bgfx::setDebug(BGFX_DEBUG_STATS);
@@ -61,6 +64,8 @@ void Window::Update()
 
 	bgfx::submit(0, program);
 	bgfx::frame();
+
+	counter++; // Don't look at this :)
 
 	glfwSwapBuffers(m_Window);
 	glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
