@@ -118,10 +118,10 @@ bool Window::Setup(const char* title, int width, int height, bool use_imgui)
 	vbh = bgfx::createVertexBuffer(bgfx::makeRef(cubeVertices, sizeof(cubeVertices)), pcvDecl);
 	ibh = bgfx::createIndexBuffer(bgfx::makeRef(cubeTriList, sizeof(cubeTriList)));
 
-	program = FileManager::LoadProgram("vs_cubes.bin", "fs_cubes.bin");
+	program = FileManager::LoadProgram(NOZ_OBFUSCATE("vs_cubes.bin"), NOZ_OBFUSCATE("fs_cubes.bin"));
 	if (program.idx == USHRT_MAX)
 	{
-		NOZ_LOG_ERROR("Shaders not supported or not found");
+		NOZ_LOG_ERROR(NOZ_OBFUSCATE("Shaders not supported or not found"));
 		return false;
 	}
 
