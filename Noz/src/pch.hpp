@@ -1,9 +1,5 @@
 #pragma once
 
-#ifdef _MSC_VER
-	#pragma comment(linker, "/NODEFAULTLIB:LIBCMT.lib")
-#endif
-
 #include <memory>
 #include <vector>
 #include <tuple>

@@ -137,7 +137,16 @@ bgfx::ShaderHandle FileManager::LoadShader(const char* shader_name)
 bgfx::ProgramHandle FileManager::LoadProgram(const char* vs_name, const char* fs_name)
 {
 	bgfx::ShaderHandle vsh = LoadShader(vs_name);
+	if (vsh.idx == USHRT_MAX)
+	{
+		return bgfx::ProgramHandle();
+	}
+
 	bgfx::ShaderHandle fsh = LoadShader(fs_name);
+	if (fsh.idx == USHRT_MAX)
+	{
+		return bgfx::ProgramHandle();
+	}
 
 	return bgfx::createProgram(vsh, fsh, true);
 }

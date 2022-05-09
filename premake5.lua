@@ -22,13 +22,9 @@ workspace "Noz"
 		"%{wks.location}/Noz/vendor/glfw/include",
 		"%{wks.location}/Noz/vendor/glm",
 		"%{wks.location}/Noz/vendor/fmt/include",
-		"%{wks.location}/Noz/vendor/imgui",
-		"%{wks.location}/Noz/vendor/imgui/backends",
 		"%{wks.location}/Noz/vendor/bx/include",
 		"%{wks.location}/Noz/vendor/bimg/include",
-		"%{wks.location}/Noz/vendor/bgfx/include",
-		"%{wks.location}/Noz/vendor/bgfx/3rdparty",
-		"%{wks.location}/Noz/vendor/bgfx/examples/common"
+		"%{wks.location}/Noz/vendor/bgfx/include"
 	}
 	
 	filter "system:windows"
