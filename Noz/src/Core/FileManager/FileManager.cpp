@@ -51,70 +51,70 @@ const bgfx::Memory* FileManager::LoadMem(const char* file_path)
 
 bgfx::ShaderHandle FileManager::LoadShader(const char* shader_name)
 {
-	std::string shader_path = "assets/";
+	std::string shader_path = NOZ_OBFUSCATE("assets/");
 
 	switch (bgfx::getRendererType())
 	{
 		case bgfx::RendererType::Noop:	
 		case bgfx::RendererType::Direct3D9:
 		{
-			shader_path += "shaders/dx9/";   
+			shader_path += NOZ_OBFUSCATE("shaders/dx9/");
 			break;
 		}
 
 		case bgfx::RendererType::Direct3D11:
 		case bgfx::RendererType::Direct3D12:
 		{
-			shader_path += "shaders/dx11/";  
+			shader_path += NOZ_OBFUSCATE("shaders/dx11/");
 			break;
 		}
 
 		case bgfx::RendererType::Agc:
 		case bgfx::RendererType::Gnm:
 		{
-			shader_path += "shaders/pssl/";  
+			shader_path += NOZ_OBFUSCATE("shaders/pssl/");
 			break;
 		}
 
 		case bgfx::RendererType::Metal:
 		{
-			shader_path += "shaders/metal/"; 
+			shader_path += NOZ_OBFUSCATE("shaders/metal/");
 			break;
 		}
 		case bgfx::RendererType::Nvn:
 		{
-			shader_path += "shaders/nvn/";   
+			shader_path += NOZ_OBFUSCATE("shaders/nvn/");
 			break;
 		}
 
 		case bgfx::RendererType::OpenGL:
 		{
-			shader_path += "shaders/glsl/";  
+			shader_path += NOZ_OBFUSCATE("shaders/glsl/");
 			break;
 		}
 
 		case bgfx::RendererType::OpenGLES:
 		{
-			shader_path += "shaders/essl/";  
+			shader_path += NOZ_OBFUSCATE("shaders/essl/");
 			break;
 		}
 
 		case bgfx::RendererType::Vulkan:
 		{
-			shader_path += "shaders/spirv/"; 
+			shader_path += NOZ_OBFUSCATE("shaders/spirv/");
 			break;
 		}
 
 		case bgfx::RendererType::WebGPU:
 		{
-			shader_path += "shaders/spirv/"; 
+			shader_path += NOZ_OBFUSCATE("shaders/spirv/");
 			break;
 		}
 
 		case bgfx::RendererType::Count:
 		default:
 		{
-			shader_path = "???";
+			shader_path = NOZ_OBFUSCATE("???");
 			NOZ_LOG_ERROR(NOZ_OBFUSCATE("?Shader?"));
 			break;
 		}
