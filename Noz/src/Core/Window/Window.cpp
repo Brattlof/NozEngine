@@ -65,7 +65,14 @@ void Window::Update()
 	bgfx::submit(0, program);
 	bgfx::frame();
 
-	counter++; // Don't look at this :)
+	// Don't look at this part :)
+	counter++;
+
+	if (counter > 1337)
+	{
+		counter = 0;
+	}
+	//
 
 	glfwSwapBuffers(m_Window);
 	glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
